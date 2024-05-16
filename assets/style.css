@@ -3,18 +3,24 @@
     margin: 0;
     padding: 0;
 }
-
-
-.hero-body {
+body{
     background-color: black;
-    height: 100vh;
-    
 }
 
-.bgImg {
-    display: flex;
-    justify-content: center;
-    height: 500px;
+.hero-body {
+    background-color: transparent;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    height: 100vh;
 }
 
 .downloads {
@@ -22,21 +28,26 @@
     justify-content: center;
     margin-top: 80px;
     gap: 10px;
-
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
 }
 
 .links {
     border: 1px solid white;
-    width: 20%;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 20px;
+    text-wrap: nowrap;
     
 }
 
 .links h2 {
-    font-size: larger;
+    font-size:18px;
     font-weight: bolder;
     color: aliceblue;
 }
@@ -54,30 +65,36 @@
     display: flex;
     justify-content: space-around;
     margin: auto;
-
+    align-items: center;
 }
-
+.qr{
+    width: 150px;
+    padding-top: 50px;
+}
 .hero-text{
-    width: 60%;
-    padding-right: 20%;
-    padding-top: 9%;
-    font-size: 80px;
+    width: 60svw;
+    margin: auto;
+    padding-top: 5vh;
+    font-size: 60px;
     color: aliceblue;
     font-weight: bolder;
 }
 
-@media screen 
-  and (device-width: 480px) 
-  and (device-height: 800px) {
+@media  (max-width:992px)  {
 
     .hero-body {
-        height: 100%;     
+        height: 100vh;     
     }
-
+    .hero-text {
+        font-size: 2.5rem;     
+    }
     .downloads{
+        margin-top: 30px !important;
         display: grid;
         grid-column: auto;
         margin: 0;
+    bottom: 2vh;
+
     }
 
     .links{
@@ -88,14 +105,11 @@
         font-size: medium;
     }
 
-    .hero-text{
-        font-size: 30px;
-        margin-right: 90px;
-        width: 50%;
-    }
+  
 
-    .bgImg{
+    .bg-img{
         background-size: 600px;
+        height: 60vh;
 
     }
 
